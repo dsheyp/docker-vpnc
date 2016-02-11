@@ -6,7 +6,5 @@ RUN apt-get update && \
     apt-get clean
     
 RUN mkdir /homes
-
-COPY /etc/vpnc/default.conf /homes/jpp/server1_vpn.conf
   
 VOLUME /homes
