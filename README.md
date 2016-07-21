@@ -8,7 +8,7 @@ installation:
 and make it executable by the following command:
 `chmod +x /usr/syno/etc.defaults/rc.d/S01tun.sh`
 - add a config file for vpnc on your synology: still in ssh session do a
-`cd /volume1/homes/YOUR_USERNAME`
+`cd /volume1/homes/YOUR_SYNOLOGY_USERNAME`
 , then download `vpn1.conf` by doing a
 `wget https://github.com/dsheyp/docker-vpnc/blob/master/vpn1.conf`
 and edit it to your needs by doing a
@@ -22,11 +22,12 @@ using vpnc:
 - in ssh console go into your docker container by doing a
 `docker exec -it vpnc bash`
 - in your docker container open a vpnc connection by doing
-`vpnc /homes/jpp/vpn1.conf`
-then, for example, you can mount a remote directory by doing
-`mount.cifs //server-name.domain-name.com/users /homes/YOUR_SYNOLOGY_USERNAME/mountpointname -o user=VPN_USERNAME,nounix,noserverino,iocharset=utf8`
-- to do so you have to first create the mount point by doing a
-`mkdir -p /homes/YOUR_SYNOLOGY_USERNAME/mountpointname`
+`vpnc /homes/YOUR_SYNOLOGY_USERNAME/vpn1.conf`
+- create a mount point by doing
+`mkdir -p /homes/YOUR_SYNOLOGY_USERNAME/CHOOSE_A_MOUNT_POINT_NAME`
+- you can now mount a remote directory by doing
+`mount.cifs //remote-server-name.remote-domain-name.com/REMOTE_DIRECTORY_NAME /homes/YOUR_SYNOLOGY_USERNAME/CHOOSE_A_MOUNT_POINT_NAME -o user=VPN_USERNAME,nounix,noserverino,iocharset=utf8`
+
 
     
     
